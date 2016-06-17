@@ -1,0 +1,16 @@
+{
+  "name": "DigitalOcean",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Richie",
+  "contributors": [],
+  "dependencies": {
+    "do-wrapper": "^3.6.1"
+  }
+}

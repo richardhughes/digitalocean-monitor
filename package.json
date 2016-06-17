@@ -12,5 +12,8 @@
   "contributors": [],
   "dependencies": {
     "do-wrapper": "^3.6.1"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.3"
   }
 }

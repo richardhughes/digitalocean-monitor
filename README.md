@@ -1,1 +1,1 @@
-# digitalocean-monitor
+# electron basic template

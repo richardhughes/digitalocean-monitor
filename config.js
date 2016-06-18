@@ -1,7 +1,3 @@
-module.exports.digitalOceanConfig = {
-    digital_ocean_api: "[API_KEY]"
-};
-
 module.exports.windowConfig = function (theme) {
     return {
         width: theme.properties.width,

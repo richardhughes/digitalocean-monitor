@@ -1,1 +1,1 @@
-"# digitalocean-monitor" 
+# digitalocean-monitor

@@ -36,14 +36,7 @@ module.exports.menuBarTemplate = [
             {
                 label: 'Quit',
                 accelerator: 'CmdOrCtrl+Q',
-                //role: 'close',
-                submenu: [
-                    {
-                        label: 'Quit',
-                        //accelerator: 'CmdOrCtrl+Q',
-                        role: 'close'
-                    }
-                ]
+                role: 'close'
             }
         ]
     }

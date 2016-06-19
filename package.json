@@ -15,10 +15,8 @@
     "url": "https://github.com/richardhughes/electron-basic-template.git"
   },
   "dependencies": {
-    "do-wrapper": "^3.6.1"
   },
   "devDependencies": {
-    "coveralls": "^2.11.9",
     "electron-prebuilt": "^1.2.3"
   }
 }

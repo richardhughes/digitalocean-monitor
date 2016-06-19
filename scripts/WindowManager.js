@@ -84,7 +84,7 @@ WindowManager.prototype.getThemeMenuTemplate = function () {
         template.submenu.push({
             label: theme,
             click() {
-                WindowManager.prototype.switchTheme(theme)
+                WindowManager.prototype.switchTheme(theme);
             }
         });
     });

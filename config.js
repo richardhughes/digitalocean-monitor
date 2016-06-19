@@ -7,7 +7,7 @@ module.exports.windowConfig = function (theme) {
         alwaysOnTop: true,
         frame: theme.properties.useFrame,
         maximizable: false
-    }
+    };
 };
 
 module.exports.themes = {

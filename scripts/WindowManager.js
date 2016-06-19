@@ -5,8 +5,8 @@ const Menu = electron;
 const config = require('./../config');
 
 // Set the current theme as the default
-var currentTheme = config.themes["default"];
-var mainWindow = null;
+let currentTheme = config.themes["default"];
+let mainWindow = null;
 
 var WindowManager = function () {
     this.init();
@@ -32,14 +32,14 @@ WindowManager.prototype.createWindow = function () {
 };
 
 WindowManager.prototype.setMenuBar = function () {
+    config.menuBarTemplate.push(this.getThemeMenuTemplate());
     mainWindow.setMenu(Menu.Menu.buildFromTemplate(
         config.menuBarTemplate
     ));
-}
+};
 
 WindowManager.prototype.setCustomThemeCSS = function () {
     let webContents = mainWindow.webContents;
-    console.log(webContents);
     webContents.on("dom-ready", () => {
         if (typeof currentTheme.css === 'object') {
             currentTheme.css.forEach((styleLocation)=> {
@@ -53,7 +53,7 @@ WindowManager.prototype.setCustomThemeCSS = function () {
             });
         }
     });
-}
+};
 
 WindowManager.prototype.setCloseListener = function () {
     mainWindow.on('closed', () => {
@@ -68,8 +68,37 @@ WindowManager.prototype.setCloseListener = function () {
 
 WindowManager.prototype.loadHTMLFile = function (fileName) {
     app.on('ready', ()=> {
-        mainWindow.loadURL('file://' + __dirname + '/../templates/' + fileName);
+        mainWindow.loadURL(
+            'file://' + __dirname + '/../templates/' + fileName
+        );
     });
+};
+
+WindowManager.prototype.getThemeMenuTemplate = function () {
+    let allThemes = this.getAllThemes();
+    let template = {
+        label: "Themes",
+        submenu: []
+    };
+    allThemes.forEach((theme) => {
+        template.submenu.push({
+            label: theme,
+            click() {
+                WindowManager.prototype.switchTheme(theme)
+            }
+        });
+    });
+    return template;
+};
+
+WindowManager.prototype.switchTheme = function (theme) {
+    this.setTheme(theme);
+    let webContents = mainWindow.webContents;
+    webContents.reload();
+};
+
+WindowManager.prototype.getAllThemes = function () {
+    return Object.keys(config.themes);
 };
 
 module.exports = WindowManager;

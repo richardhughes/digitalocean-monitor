@@ -1,4 +1,4 @@
-# Basic Electron Template
+# Basic Electron Template [![Build Status](https://travis-ci.org/richardhughes/electron-basic-template.svg?branch=master)](https://travis-ci.org/richardhughes/electron-basic-template)
 
 This application should be enough to get you started when writing an Electron application. I've designed this so hopefully you'll
 only have to write HTML, JavaScript and CSS for your pages rather than NodeJS or Electron.
